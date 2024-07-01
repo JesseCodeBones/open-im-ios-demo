@@ -9,11 +9,11 @@ let kGtAppKey = ""
 let kGtAppSecret = ""
 
 //The domain name used by default
-let defaultHost = "127.0.0.1"
+let defaultHost = "101.43.71.217"
 
 // The default IP or domain name used in the settings page. After the settings page is saved, defaultHost will become invalid.
-let defaultIP = "127.0.0.1"
-let defaultDomain = "web.rentsoft.cn"
+let defaultIP = "101.43.71.217"
+let defaultDomain = "101.43.71.217"
 
 let businessPort = ":10008"
 let businessRoute = "/chat"
@@ -36,11 +36,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         UINavigationBar.appearance().tintColor = .c0C1C33
         // Main configuration here, pay attention to the differences between http and https, ws and wss, IP uses port, domain name uses routing
-        let enableTLS = UserDefaults.standard.object(forKey: useTLSKey) == nil
-        ? false : UserDefaults.standard.bool(forKey: useTLSKey)
+        let enableTLS = false
         
-        let httpScheme = enableTLS ? "https://" : "http://"
-        let wsScheme = enableTLS  ? "wss://" : "ws://"
+        let httpScheme = "http://"
+        let wsScheme = "ws://"
         
 //        let predicateStr = "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
 //        let predicate = NSPredicate(format: "SELF MATCHES %@", predicateStr)
