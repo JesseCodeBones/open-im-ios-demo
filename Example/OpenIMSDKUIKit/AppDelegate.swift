@@ -9,11 +9,11 @@ let kGtAppKey = ""
 let kGtAppSecret = ""
 
 //The domain name used by default
-let defaultHost = "101.43.71.217"
+let defaultHost = "talk.ls150301.site"
 
 // The default IP or domain name used in the settings page. After the settings page is saved, defaultHost will become invalid.
-let defaultIP = "101.43.71.217"
-let defaultDomain = "101.43.71.217"
+let defaultIP = "127.0.0.1"
+let defaultDomain = "127.0.0.1"
 
 let businessPort = ":10008"
 let businessRoute = "/chat"
@@ -36,17 +36,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         UINavigationBar.appearance().tintColor = .c0C1C33
         // Main configuration here, pay attention to the differences between http and https, ws and wss, IP uses port, domain name uses routing
-        let enableTLS = false
+        let enableTLS = true
         
-        let httpScheme = "http://"
-        let wsScheme = "ws://"
+        let httpScheme = "https://"
+        let wsScheme = "wss://"
         
 //        let predicateStr = "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
 //        let predicate = NSPredicate(format: "SELF MATCHES %@", predicateStr)
 //        let isIP = predicate.evaluate(with: defaultHost)
         
-        let enableDomain = UserDefaults.standard.object(forKey: useDomainKey) == nil
-        ? false : UserDefaults.standard.bool(forKey: useDomainKey)
+        let enableDomain = true
         
         let serverAddress = UserDefaults.standard.string(forKey: serverAddressKey) ?? defaultHost
         
